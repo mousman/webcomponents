@@ -2,11 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Library</title>
+    <title>Components Library</title>
+    <style>
+      h1 {
+        color: #333;
+        font-family: Arial, sans-serif;
+        font-size: 2rem;
+        text-align: center;
+        padding: 1rem;
+        background-color: aliceblue;
+      }
+
+      di-notifications {
+        display: block;
+        width: 300px;
+      }
+    </style>
   </head>
   <body>
     <h1>Library</h1>
     <script type="module" src="./src/main-wc.ts"></script>
-    <di-notifications>oook</di-notifications>
+    <di-notifications namespace="the namespace">oook</di-notifications>
   </body>
 </html>

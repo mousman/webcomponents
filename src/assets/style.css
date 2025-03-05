@@ -1,10 +1,10 @@
 @import 'tailwindcss';
+@import './components.css';
 
 @theme {
   --color-primary: var(--color-blue-100);
   --color-success: var(--color-emerald-100);
   --color-info: var(--color-indigo-100);
   --color-error: var(--color-red-100);
-
   --font-poppins: Poppins, sans-serif;
 }
