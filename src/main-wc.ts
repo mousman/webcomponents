@@ -1,5 +1,6 @@
 import { defineCustomElement } from 'vue'
 import styles from './assets/style.css?inline'
+import './assets/style-wc.css'
 import DiNotifications from './notifications/components/di-notifications.ce.vue'
 
 const DiNotificationsEL = defineCustomElement(DiNotifications, {
