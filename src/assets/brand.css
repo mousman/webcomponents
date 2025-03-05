@@ -1,0 +1,10 @@
+@theme {
+  --color-primary: var(--color-blue-100);
+  --color-success: var(--color-emerald-100);
+  --color-success-800: var(--color-emerald-800);
+  --color-info: var(--color-indigo-100);
+  --color-info-800: var(--color-indigo-800);
+  --color-error: var(--color-red-100);
+  --color-error-800: var(--color-red-800);
+  --font-poppins: Poppins, sans-serif;
+}

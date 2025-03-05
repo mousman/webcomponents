@@ -1,5 +1,5 @@
 @layer components {
   .di-notification {
-    @apply shadow-lg p-2;
+    @apply shadow-lg py-2 pl-2 pr-2;
   }
 }
