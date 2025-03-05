@@ -3,9 +3,22 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import tailwindcss from '@tailwindcss/vite'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import Components from 'unplugin-vue-components/vite'
 
 export default defineConfig(({ mode }) => ({
-  plugins: [vue(), vueDevTools(), tailwindcss()],
+  plugins: [
+    vue(),
+    vueDevTools(),
+    tailwindcss(),
+    Icons({
+      compiler: 'vue3',
+    }),
+    Components({
+      resolvers: [IconsResolver()],
+    }),
+  ],
   define: {
     'process.env.NODE_ENV': JSON.stringify(mode),
   },
@@ -29,7 +42,6 @@ export default defineConfig(({ mode }) => ({
     //     },
     //   },
     // },
-    cssCodeSplit: true,
     rollupOptions: {
       input: {
         demo: './demo.html',
