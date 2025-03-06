@@ -1,5 +1,6 @@
 @theme {
   --color-primary: var(--color-blue-100);
+  --color-primary-300: var(--color-blue-300);
   --color-success: var(--color-emerald-100);
   --color-success-800: var(--color-emerald-800);
   --color-info: var(--color-indigo-100);

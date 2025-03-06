@@ -8,10 +8,10 @@ export const NOTIFICATION_TYPE = {
   INFO: 'info',
 } as const
 
-type NotificationType = (typeof NOTIFICATION_TYPE)[keyof typeof NOTIFICATION_TYPE]
+export type NotificationType = (typeof NOTIFICATION_TYPE)[keyof typeof NOTIFICATION_TYPE]
 
 export interface Notification {
-  id: number
+  id: string
   title: string
   description: string
   type: NotificationType

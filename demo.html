@@ -17,11 +17,21 @@
         display: block;
         width: 300px;
       }
+
+      .container {
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem;
+      }
     </style>
   </head>
   <body>
     <h1>Library</h1>
     <script type="module" src="./src/main-wc.ts"></script>
-    <di-notifications namespace="the namespace">oook</di-notifications>
+    <div class="container">
+      <di-notifications namespace="the namespace">1</di-notifications>
+      <di-notifications namespace="the namespace" creation="false">2</di-notifications>
+      <di-notifications namespace="the namespace 2">3</di-notifications>
+    </div>
   </body>
 </html>

@@ -3,11 +3,11 @@ import { type Notification } from '@/notifications/types/notifications'
 import NotificationCore from './notification-core.vue'
 
 // I could have used <Component :is="" /> in parent component
-// this way gives more flexibility
+// but this way gives more flexibility
 const { notification } = defineProps<{ notification: Notification }>()
 
 const emit = defineEmits<{
-  close: [number]
+  close: [string]
 }>()
 </script>
 
