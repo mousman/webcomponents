@@ -19,7 +19,7 @@ function onClose(id: string) {
       <span>
         {{ namespace }}
       </span>
-      {{ notifications.length }} unread
+      {{ notifications?.length ?? 0 }} unread
     </div>
     <di-notification
       v-for="notification in notifications"

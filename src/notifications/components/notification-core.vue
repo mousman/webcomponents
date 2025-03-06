@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { NOTIFICATION_TYPE } from '@/notifications/types/notifications'
+import { NOTIFICATION_TYPE, type NotificationType } from '@/notifications/types/notifications'
+import IMdiSuccessCircleOutline from "~icons/mdi/success-circle-outline"
+import IMdiInformationVariantCircleOutline from "~icons/mdi/information-variant-circle-outline"
+import IMdiErrorOutline from "~icons/mdi/error-outline"
 
 const { variant = 'info', closable = true } = defineProps<{
-  variant: string
+  variant: NotificationType
   closable?: boolean
 }>()
 
@@ -18,6 +21,10 @@ const variantStyle = computed(() => {
   }
 })
 
+const Icon = computed(()=> variant === NOTIFICATION_TYPE.SUCCESS ?
+  IMdiSuccessCircleOutline : variant === NOTIFICATION_TYPE.INFO ?
+    IMdiInformationVariantCircleOutline : IMdiErrorOutline)
+
 const emit = defineEmits<{
   close: []
 }>()
@@ -26,15 +33,9 @@ const emit = defineEmits<{
 <template>
   <div class="di-notification min-w-[250px]" :class="variantStyle.background">
     <div class="flex flex-no-wrap gap-3" :class="variantStyle.textColor">
-      <i-mdi-success-circle-outline
-        v-if="variant === NOTIFICATION_TYPE.SUCCESS"
+      <component :is="Icon"
         class="self-center text-xl"
       />
-      <i-mdi-information-variant-circle-outline
-        v-if="variant === NOTIFICATION_TYPE.INFO"
-        class="self-center text-xl"
-      />
-      <i-mdi-error-outline v-if="variant === NOTIFICATION_TYPE.ERROR" class="self-center text-xl" />
       <div class="self-center grow">
         <div class="text-m font-medium">
           <slot name="title" />
