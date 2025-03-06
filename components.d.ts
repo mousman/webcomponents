@@ -8,7 +8,11 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    IMdiChevronDown: typeof import('~icons/mdi/chevron-down')['default']
+    IMdiChevronUp: typeof import('~icons/mdi/chevron-up')['default']
     IMdiClose: typeof import('~icons/mdi/close')['default']
+    IMdiErrorOutline: typeof import('~icons/mdi/error-outline')['default']
+    IMdiInformationVariantCircleOutline: typeof import('~icons/mdi/information-variant-circle-outline')['default']
     IMdiSuccessCircleOutline: typeof import('~icons/mdi/success-circle-outline')['default']
   }
 }

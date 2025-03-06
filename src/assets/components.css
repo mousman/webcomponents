@@ -2,4 +2,19 @@
   .di-notification {
     @apply shadow-lg py-2 pl-2 pr-2;
   }
+
+  .di-notification-form input {
+    @apply border border-black/50 bg-white/60;
+  }
+
+  .di-notification-form textarea {
+    @apply border border-black/50 bg-white/60;
+  }
+
+  .di-notification-form select {
+    @apply border border-black/50 bg-white/60;
+  }
+  .di-notification-form button {
+    @apply bg-primary-300 hover:bg-primary-300/80 cursor-pointer rounded-xl px-2;
+  }
 }
