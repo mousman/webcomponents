@@ -6,7 +6,7 @@ import IMdiInformationVariantCircleOutline from "~icons/mdi/information-variant-
 import IMdiErrorOutline from "~icons/mdi/error-outline"
 
 const { variant = 'info', closable = true } = defineProps<{
-  variant: NotificationType
+  variant?: NotificationType
   closable?: boolean
 }>()
 

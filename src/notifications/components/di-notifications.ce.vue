@@ -4,7 +4,6 @@ import DiNotificationForm from './di-notification-form.vue'
 import { useNotificationStore } from '@/notifications/composables/notifications-store'
 
 const { namespace, creation } = defineProps<{ namespace: string; creation?: string }>()
-
 const { notifications, removeNotification } = useNotificationStore(namespace)
 
 function onClose(id: string) {
