@@ -42,13 +42,15 @@ function toggle() {
 
 <template>
   <div class="bg-primary p-2 shadow-lg">
-    <div class="flex justify-between mt-1 font-semibold cursor-pointer" @click="toggle">
-      <div>Add notification</div>
-      <div class="hover:bg-black/10 p-1 text-lg">
-        <i-mdi-chevron-up v-if="isCollapsed" />
-        <i-mdi-chevron-down v-else />
+    <button class="w-full" @click="toggle">
+      <div class="flex justify-between mt-1 font-semibold cursor-pointer">
+        <div>Add notification</div>
+        <div class="hover:bg-black/10 p-1 text-lg">
+          <i-mdi-chevron-up v-if="isCollapsed" />
+          <i-mdi-chevron-down v-else />
+        </div>
       </div>
-    </div>
+    </button>
     <form
       v-if="isCollapsed"
       @submit.prevent="handleSubmit"
@@ -72,7 +74,6 @@ function toggle() {
           <option :value="NOTIFICATION_TYPE.ERROR">Error</option>
         </select>
       </div>
-
       <button
         type="submit"
         class="m-auto mt-4 px-6 py-0.5 font-semibold text-sm"

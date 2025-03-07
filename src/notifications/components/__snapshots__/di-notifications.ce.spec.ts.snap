@@ -1,0 +1,37 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DiNotifications.vue > renders 1`] = `
+{
+  "description": "desc2",
+  "id": "6dadbf2f-7573-4924-96f9-ad028a597a88",
+  "title": "titre2",
+  "type": "success",
+}
+`;
+
+exports[`DiNotifications.vue > renders 2`] = `
+{
+  "description": "desc1",
+  "id": "1bedc1ef-16c7-4224-9007-70468835435d",
+  "title": "titre1",
+  "type": "info",
+}
+`;
+
+exports[`NotificationCore.vue > renders 1`] = `
+{
+  "description": "desc2",
+  "id": "6dadbf2f-7573-4924-96f9-ad028a597a88",
+  "title": "titre2",
+  "type": "success",
+}
+`;
+
+exports[`NotificationCore.vue > renders 2`] = `
+{
+  "description": "desc1",
+  "id": "1bedc1ef-16c7-4224-9007-70468835435d",
+  "title": "titre1",
+  "type": "info",
+}
+`;

@@ -3,8 +3,6 @@ import type { Notification } from '@/notifications/types/notifications'
 
 const notificationsNS = ref<Record<string, Notification[]>>({})
 
-loadNotifications()
-
 function loadNotifications() {
   const stored = localStorage.getItem(`di-notifications`) ?? '{}'
   notificationsNS.value = JSON.parse(stored)
@@ -30,12 +28,11 @@ export function useNotificationStore(namespace: string) {
   function saveNotifications() {
     localStorage.setItem(`di-notifications`, JSON.stringify(notificationsNS.value))
   }
-
+  loadNotifications()
   const notifications = computed(() => notificationsNS.value[namespace])
 
   return {
     notifications,
-    loadNotifications,
     addNotification,
     removeNotification,
   }
