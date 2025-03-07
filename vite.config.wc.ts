@@ -8,6 +8,13 @@ import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
 
 export default defineConfig(({ mode }) => ({
+  preview: {
+    port: 3000,
+  },
+  server: {
+    port: 3000,
+    strictPort: true,
+  },
   plugins: [
     vue(),
     vueDevTools(),

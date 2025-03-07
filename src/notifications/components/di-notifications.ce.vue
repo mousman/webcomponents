@@ -12,9 +12,12 @@ function onClose(id: string) {
 </script>
 
 <template>
-  <div class="flex flex-col gap-2 min-w-[250px]">
+  <div class="flex flex-col gap-2 min-w-[250px]" data-testid="di-notifications">
     <slot />
-    <div class="bg-blue-500 mb-2 text-white px-2 flex justify-between">
+    <div
+      class="bg-blue-500 mb-2 text-white px-2 flex justify-between"
+      data-testid="di-notifications-header"
+    >
       <span>
         {{ namespace }}
       </span>

@@ -12,7 +12,11 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <notification-core :variant="notification.type" @close="emit('close', notification.id)">
+  <notification-core
+    :variant="notification.type"
+    @close="emit('close', notification.id)"
+    data-testid="di-notification"
+  >
     <template v-slot:title>{{ notification.title }}</template>
     <template v-slot:description>{{ notification.description }}</template>
   </notification-core>
