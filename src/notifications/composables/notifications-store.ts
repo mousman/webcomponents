@@ -1,5 +1,6 @@
 import { ref, computed } from 'vue'
 import type { Notification } from '@/notifications/types/notifications'
+import { v4 as uuidv4 } from 'uuid'
 
 const notificationsNS = ref<Record<string, Notification[]>>({})
 
@@ -13,7 +14,7 @@ export function useNotificationStore(namespace: string) {
     notificationsNS.value[namespace] = [
       {
         ...notification,
-        id: crypto.randomUUID(),
+        id: uuidv4(),
       },
       ...(notificationsNS.value[namespace] ?? []),
     ]
