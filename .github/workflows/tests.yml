@@ -1,11 +1,9 @@
-name: CI/CD
+name: tests
+run-name: tests
 on:
-  push:
-    branches:
-      - '**'
   pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches: [master, dev]
+    types: [opened, closed]
+    branches: [master]
 jobs:
   test:
     timeout-minutes: 60
@@ -33,25 +31,4 @@ jobs:
   build:
     needs: test
     if: github.event.pull_request.merged == true
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-      - name: Install dependencies
-        run: npm install -g pnpm && pnpm install
-      - name: Build
-        run: pnpm run build:app
-      - name: Build web components
-        run: pnpm run build:lib
-      - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
-        with:
-          name: dist
-          path: dist/
-      - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
-        with:
-          name: dist-lib
-          path: dist-lib/
+    uses: ./.github/workflows/build.yml
